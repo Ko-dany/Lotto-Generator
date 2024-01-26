@@ -59,20 +59,24 @@ public class Purchase {
     }
 
     public void startLottery(){
-        System.out.println("\nPlease enter a total of 6 lottery numbers with 1 digit.");
-
-        for(int i = 0; i < customerNumbers.length; i++){
-            customerNumbers[i] = getLotteryNumber(i);
-            customerLottery += "[" + Integer.toString(customerNumbers[i]) + "]";
-        }
-        Arrays.sort(customerNumbers);
-
-        System.out.println("The numbers you entered is " + customerLottery +".\n" +
-                "Would you like to proceed with the lottery purchase with these numbers?\n" +
-                "[1] Yes \t [2] No");
-
-        String answer = "";
         for(;;){
+            customerNumbers = new int[6];
+            customerLottery = "";
+
+            System.out.println("\nPlease enter a total of 6 lottery numbers with 1 digit.");
+
+            for(int i = 0; i < customerNumbers.length; i++){
+                customerNumbers[i] = getLotteryNumber(i);
+                customerLottery += "[" + Integer.toString(customerNumbers[i]) + "]";
+            }
+            Arrays.sort(customerNumbers);
+
+            System.out.println("The numbers you entered is " + customerLottery +".\n" +
+                    "Would you like to proceed with the lottery purchase with these numbers?\n" +
+                    "[1] Yes \t [2] No");
+
+            String answer = "";
+
             System.out.print("\nInput: ");
             answer = sc.next();
 
@@ -80,8 +84,7 @@ public class Purchase {
                 orderLottery();
                 break;
             }else if(answer.equals("2")){
-                System.out.println("\nlottery.Lottery purchase is over.");
-                System.exit(0);
+                System.out.println("\nRestarting the Lottery number selection.");
             }else{
                 System.out.println("\nInvalid input. Please try again.");
             }

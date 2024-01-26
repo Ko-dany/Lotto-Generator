@@ -4,6 +4,7 @@ package lottery;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Lottery {
     int[] randomNumbers = new int[6];
@@ -29,9 +30,9 @@ public class Lottery {
         }
 
         System.out.println("The winning number for the lottery.\r\n" +
-                "★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆\r\n" +
-                "★☆★☆★☆★☆★☆★☆" + lotteryNumbers + "★☆★☆★☆★☆★☆★☆\n" +
-                "★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
+                "******************************************************\r\n" +
+                "******************" + lotteryNumbers + "******************\n" +
+                "******************************************************");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Calendar time = Calendar.getInstance();
@@ -60,8 +61,14 @@ public class Lottery {
 
         System.out.println("\n=================================================================");
         System.out.println("Lottery has been completed. Thank you.");
+        System.out.println("Press enter to exit.");
         System.out.println("=================================================================");
 
+        Thread waitThread = new Thread(()->{
+            new Scanner(System.in).nextLine();
+        });
+
+        waitThread.start();
 
     }
 
