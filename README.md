@@ -14,3 +14,9 @@
 
 [//]: # (## Main Features)
 
+## Preview
+<p>
+<img src="preview/Lotto_Generator_Video.gif">
+</p>
+
+

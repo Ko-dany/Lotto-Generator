@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lottery Generator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lottery_Generator_jar</output-path>
+    <root id="archive" name="Lottery Generator.jar">
+      <element id="module-output" name="Lottery Generator" />
+    </root>
+  </artifact>
+</component>
